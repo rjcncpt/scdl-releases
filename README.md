@@ -39,7 +39,7 @@ Der SCDL ist seit dem 25. Dezember 2025 als deutsches Community-Projekt aktiv un
 
 ## Für wen ist das?
 
-Für alle, die Star Citizen mit einer Community-Übersetzung spielen wollen. Technisches Vorwissen braucht es dafür nicht: Der Ersteinrichtungs-Assistent findet die Installation, schlägt den passenden Kanal vor und richtet den Rest von selbst ein.
+Für alle, die die Spieltexte in Star Citizen mit sinnvollen Informationen wie Baupläne, Item-Zusatzangaben und mit einer Community-Übersetzung spielen wollen. Technisches Vorwissen braucht es dafür nicht: Der Ersteinrichtungs-Assistent findet die Installation, schlägt den passenden Kanal vor und richtet den Rest von selbst ein.
 
 ## Kernfunktionen im Überblick
 
