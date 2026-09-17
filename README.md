@@ -1,14 +1,17 @@
 <h1 align="center">SCDL</h1>
 
 <p align="center">
-  <a href="https://github.com/rjcncpt/scdl-releases/releases/latest"><img src="https://img.shields.io/github/v/release/rjcncpt/scdl-releases?label=Version&color=blue" alt="Neueste Version"></a>
-  <a href="https://github.com/rjcncpt/scdl-releases/releases"><img src="https://img.shields.io/github/downloads/rjcncpt/scdl-releases/total?label=Downloads&color=brightgreen" alt="Downloads"></a>
-  <img src="https://img.shields.io/badge/Plattform-Windows%2010%20%7C%2011-informational" alt="Plattform: Windows 10 / 11">
-  <a href="https://discord.gg/5VZsTk3qjR"><img src="https://img.shields.io/badge/Discord-beitreten-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
-  <a href="https://www.sc-deutsch-launcher.de"><img src="https://img.shields.io/badge/Webseite-sc--deutsch--launcher.de-orange" alt="Webseite"></a>
-  <img src="https://img.shields.io/badge/Electron-28-47848F?logo=electron&logoColor=white" alt="Electron 28">
-  <img src="https://img.shields.io/badge/Node.js-18-339933?logo=node.js&logoColor=white" alt="Node.js 18">
-  <img src="https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
+  <a href="https://github.com/rjcncpt/scdl-releases/releases/latest"><img src="https://img.shields.io/github/v/release/rjcncpt/scdl-releases?style=for-the-badge&label=Version&labelColor=232323&color=4f8ef7&logo=github&logoColor=white" alt="Neueste Version"></a>
+  <a href="https://github.com/rjcncpt/scdl-releases/releases"><img src="https://img.shields.io/github/downloads/rjcncpt/scdl-releases/total?style=for-the-badge&label=Downloads&labelColor=232323&color=78c324&logo=download&logoColor=white" alt="Downloads"></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&labelColor=232323&logo=windows&logoColor=0078D4" alt="Plattform: Windows 10 / 11">
+  <a href="https://discord.gg/5VZsTk3qjR"><img src="https://img.shields.io/badge/Discord-232323?style=for-the-badge&logo=discord&logoColor=5865F2" alt="Discord"></a>
+  <a href="https://www.sc-deutsch-launcher.de"><img src="https://img.shields.io/badge/sc--deutsch--launcher.de-232323?style=for-the-badge&logo=googlechrome&logoColor=f97316" alt="Webseite"></a>
+  <a href="https://ko-fi.com/scdeutsch"><img src="https://img.shields.io/badge/Ko--fi%20unterst%C3%BCtzen-232323?style=for-the-badge&logo=kofi&logoColor=FF5E5B" alt="Auf Ko-fi unterstützen"></a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Electron-28-47848F?style=for-the-badge&labelColor=232323&logo=electron&logoColor=47848F" alt="Electron 28">
+  <img src="https://img.shields.io/badge/Node.js-18-339933?style=for-the-badge&labelColor=232323&logo=nodedotjs&logoColor=339933" alt="Node.js 18">
+  <img src="https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=for-the-badge&labelColor=232323&logo=javascript&logoColor=F7DF1E" alt="JavaScript ES2022">
 </p>
 
 <p align="center">
