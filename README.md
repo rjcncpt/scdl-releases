@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/rjcncpt/scdl-releases/releases/latest"><img src="https://img.shields.io/github/v/release/rjcncpt/scdl-releases?style=for-the-badge&label=Version&labelColor=232323&color=4f8ef7&logo=github&logoColor=white" alt="Neueste Version"></a>
-  <a href="https://github.com/rjcncpt/scdl-releases/releases"><img src="https://img.shields.io/github/downloads/rjcncpt/scdl-releases/total?style=for-the-badge&label=Downloads&labelColor=232323&color=78c324&logo=download&logoColor=white" alt="Downloads"></a>
+  <a href="https://github.com/rjcncpt/scdl-releases/releases"><img src="https://img.shields.io/github/downloads/rjcncpt/scdl-releases/scdlauncher_setup.exe?displayAssetName=false&style=for-the-badge&label=Downloads&labelColor=232323&color=78c324&logo=download&logoColor=white" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&labelColor=232323&logo=windows&logoColor=0078D4" alt="Plattform: Windows 10 / 11">
   <a href="https://discord.gg/5VZsTk3qjR"><img src="https://img.shields.io/badge/Discord-232323?style=for-the-badge&logo=discord&logoColor=5865F2" alt="Discord"></a>
   <a href="https://www.sc-deutsch-launcher.de"><img src="https://img.shields.io/badge/sc--deutsch--launcher.de-232323?style=for-the-badge&logo=googlechrome&logoColor=f97316" alt="Webseite"></a>
