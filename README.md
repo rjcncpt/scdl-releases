@@ -1,4 +1,4 @@
-<h1 align="center">SCDL</h1>
+<h1 align="center">SC Desktop Launcher (SCDL)</h1>
 
 <p align="center">
   <a href="https://github.com/rjcncpt/scdl-releases/releases/latest"><img src="https://img.shields.io/github/v/release/rjcncpt/scdl-releases?style=for-the-badge&label=Version&labelColor=232323&color=4f8ef7&logo=github&logoColor=white" alt="Neueste Version"></a>
@@ -38,7 +38,7 @@ Er läuft neben dem RSI Launcher her, findet die Installation von selbst und beh
 
 ## Herkunft des Namens
 
-Der SCDL ist seit dem 25. Dezember 2025 als deutsches Community-Projekt aktiv und hat zunächst ausschließlich die deutsche Übersetzung für Star Citizen installiert und aktuell gehalten. Später kamen die Baupläne hinzu und ab diesem Zeitpunkt war der Wunsch groß, den SCDL für internationale Nutzer zu öffnen. Der App-Name "SCDL" hieß ursprünglich "SC Deutsch Launcher". Mittlerweile deckt das Programm viele Sprachen und weit mehr als nur die Übersetzung ab, weshalb der ursprüngliche Name nicht mehr zum heutigen Funktionsumfang passt. Geblieben ist vorerst die Abkürzung SCDL.
+Der SCDL ist seit dem 25. Dezember 2025 als deutsches Community-Projekt aktiv und hat zunächst ausschließlich die deutsche Übersetzung für Star Citizen installiert und aktuell gehalten. Später kamen die Baupläne hinzu und ab diesem Zeitpunkt war der Wunsch groß, den SCDL für internationale Nutzer zu öffnen. Der App-Name "SCDL" hieß ursprünglich "SC Deutsch Launcher". Mittlerweile deckt das Programm viele Sprachen und weit mehr als nur die Übersetzung ab, weshalb der ursprüngliche Name nicht mehr zum heutigen Funktionsumfang passt. Daher wurde die APP umbenannt in `SC Desktop Launcher`, damit der Kürzel (SCDL) bestehen bleiben kann.
 
 ## Für wen ist das?
 
