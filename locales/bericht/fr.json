@@ -79,7 +79,7 @@
   "gt.bericht.ausgang": "Issue des missions",
   "gt.bericht.gesamt": "{0} AU TOTAL",
   "gt.bericht.haeufigsteMissionen": "Missions les plus fréquentes",
-  "gt.bericht.missionenHinweis": "Le classement utilise le titre lisible de la mission ; le code interne du contrat n’apparaît pas. Le paiement figure dans le journal sans numéro de mission et est rattaché par l’écart de temps avec la fin de la mission ; il n’apparaît que dans une petite partie des fichiers journaux.",
+  "gt.bericht.missionenHinweis": "Le classement utilise le titre lisible de la mission ; le code interne du contrat n’apparaît pas. Le paiement figure dans le journal sans numéro de mission et est rattaché par l’écart de temps avec la fin de la mission ; il n’apparaît que dans une petite partie des fichiers journaux. Le type de mission provient du code de contrat interne. Les données de groupe ne couvrent que les logs analysés avec cette version ; si « sur x de y » est indiqué, elles manquent pour les autres missions.",
   "gt.bericht.stabilitaet": "Stabilité",
   "gt.bericht.allerSitzungen": "{0} de toutes les séances",
   "gt.bericht.ohneEnde": "Sans fermeture propre",

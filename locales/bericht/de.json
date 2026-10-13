@@ -79,7 +79,7 @@
   "gt.bericht.ausgang": "Ausgang der Missionen",
   "gt.bericht.gesamt": "{0} GESAMT",
   "gt.bericht.haeufigsteMissionen": "Häufigste Missionen",
-  "gt.bericht.missionenHinweis": "Die Rangliste geht über den lesbaren Missionstitel; der interne contract-Code taucht nicht auf. Die Auszahlung steht ohne Missionsnummer im Log und wird über den Zeitabstand zum Missionsende zugeordnet; sie kommt nur in einem kleinen Teil der Logdateien überhaupt vor.",
+  "gt.bericht.missionenHinweis": "Die Rangliste geht über den lesbaren Missionstitel; der interne contract-Code taucht nicht auf. Die Auszahlung steht ohne Missionsnummer im Log und wird über den Zeitabstand zum Missionsende zugeordnet; sie kommt nur in einem kleinen Teil der Logdateien überhaupt vor. Die Missionsart kommt aus dem internen Vertragscode. Die Party-Angaben gelten nur für Logs, die mit dieser Version ausgewertet wurden; steht „aus x von y“ daneben, fehlen sie für die übrigen Missionen.",
   "gt.bericht.stabilitaet": "Stabilität",
   "gt.bericht.allerSitzungen": "{0} aller Sitzungen",
   "gt.bericht.ohneEnde": "Ohne sauberes Ende",

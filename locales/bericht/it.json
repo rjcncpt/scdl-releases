@@ -79,7 +79,7 @@
   "gt.bericht.ausgang": "Esito delle missioni",
   "gt.bericht.gesamt": "{0} IN TOTALE",
   "gt.bericht.haeufigsteMissionen": "Missioni più frequenti",
-  "gt.bericht.missionenHinweis": "La classifica usa il titolo leggibile della missione; il codice interno del contratto non compare. Il compenso è nel log senza numero di missione e viene abbinato in base alla distanza temporale dalla fine della missione; compare solo in una piccola parte dei file di log.",
+  "gt.bericht.missionenHinweis": "La classifica usa il titolo leggibile della missione; il codice interno del contratto non compare. Il compenso è nel log senza numero di missione e viene abbinato in base alla distanza temporale dalla fine della missione; compare solo in una piccola parte dei file di log. Il tipo di missione deriva dal codice interno del contratto. I dati di gruppo riguardano solo i log analizzati con questa versione; se compare «su x di y», mancano per le altre missioni.",
   "gt.bericht.stabilitaet": "Stabilità",
   "gt.bericht.allerSitzungen": "{0} di tutte le sessioni",
   "gt.bericht.ohneEnde": "Senza chiusura regolare",

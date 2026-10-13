@@ -79,7 +79,7 @@
   "gt.bericht.ausgang": "Mission outcomes",
   "gt.bericht.gesamt": "{0} TOTAL",
   "gt.bericht.haeufigsteMissionen": "Most frequent missions",
-  "gt.bericht.missionenHinweis": "The ranking uses the readable mission title; the internal contract code does not appear. The payout is in the log without a mission number and is matched by the time gap to the mission end; it only appears in a small share of log files at all.",
+  "gt.bericht.missionenHinweis": "The ranking uses the readable mission title; the internal contract code does not appear. The payout is in the log without a mission number and is matched by the time gap to the mission end; it only appears in a small share of log files at all. The mission type comes from the internal contract code. Party data only covers logs analyzed with this version; where “from x of y” is shown, it is missing for the other missions.",
   "gt.bericht.stabilitaet": "Stability",
   "gt.bericht.allerSitzungen": "{0} of all sessions",
   "gt.bericht.ohneEnde": "Without clean exit",
