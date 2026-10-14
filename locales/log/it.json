@@ -160,6 +160,7 @@
   "log.backup.restoreAbbruch": "Ripristino {0} annullato: nessun backup di sicurezza ({1})",
   "log.backup.entfernenFehler": "Impossibile rimuovere {0}: {1}",
   "log.backup.spUebersprungen": "Programmi di avvio: {0} saltato – nessuna voce con questo nome di file nell’elenco. Ripristina prima l’elenco, poi gli script.",
+  "log.backup.spAbgelegt": "Programmi di avvio: {0} da un backup importato non inserito, solo salvato in {1}. Controllalo prima, poi copialo a mano al suo posto.",
   "log.backup.zurueckgespielt": "Backup {0} ripristinato in {1} ({2} file, {3} rimossi)",
   "log.backup.restoreFehler": "Ripristino {0} non riuscito: {1}",
   "log.backup.autoFehler": "Backup automatico non riuscito: {0}",
@@ -201,6 +202,7 @@
   "log.mig.news": "Migrazione: residui del pannello notizie rimossi",
   "log.mig.hellTheme": "Migrazione: tema chiaro rimosso, ritorno a uee-dark",
   "log.mig.gruppen": "Migrazione: preselezione dei gruppi ripresa dai moduli",
+  "log.mig.standortKachel": "Migrazione: aggiunto il riquadro «Posizione» alla dashboard",
   "log.mig.kopfzeile": "Migrazione: le traduzioni con una propria riga di intestazione verranno ricaricate al prossimo aggiornamento",
   "log.bp.scanLiveUnbekannt": "Analisi del log (live) non riuscita: errore sconosciuto"
 }

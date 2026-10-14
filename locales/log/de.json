@@ -160,6 +160,7 @@
   "log.backup.restoreAbbruch": "Wiederherstellung {0} abgebrochen: kein Sicherheitsstand ({1})",
   "log.backup.entfernenFehler": "{0} ließ sich nicht entfernen: {1}",
   "log.backup.spUebersprungen": "Startprogramme: {0} übersprungen – kein Eintrag mit diesem Dateinamen in der Liste. Erst die Liste zurückspielen, dann die Skripte.",
+  "log.backup.spAbgelegt": "Startprogramme: {0} aus einer importierten Sicherung nicht eingesetzt, nur abgelegt in {1}. Erst ansehen, dann von Hand an ihren Platz kopieren.",
   "log.backup.zurueckgespielt": "Stand {0} in {1} zurückgespielt ({2} Dateien, {3} entfernt)",
   "log.backup.restoreFehler": "Wiederherstellung {0} fehlgeschlagen: {1}",
   "log.backup.autoFehler": "Automatische Sicherung fehlgeschlagen: {0}",
@@ -201,6 +202,7 @@
   "log.mig.news": "Migration: Reste des News-Panels entfernt",
   "log.mig.hellTheme": "Migration: Hell-Theme entfernt, zurück auf uee-dark",
   "log.mig.gruppen": "Migration: Gruppen-Vorauswahl nach Modulen übernommen",
+  "log.mig.standortKachel": "Migration: Dashboard-Kachel „Standort“ ergänzt",
   "log.mig.kopfzeile": "Migration: Übersetzungen mit eigener Kopfzeile werden beim nächsten Update neu geladen",
   "log.bp.scanLiveUnbekannt": "Log-Scan (Live) fehlgeschlagen: unbekannter Fehler"
 }

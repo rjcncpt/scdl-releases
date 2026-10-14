@@ -160,6 +160,7 @@
   "log.backup.restoreAbbruch": "Restore {0} cancelled: no safety backup ({1})",
   "log.backup.entfernenFehler": "{0} could not be removed: {1}",
   "log.backup.spUebersprungen": "Startup programs: {0} skipped – no entry with this file name in the list. Restore the list first, then the scripts.",
+  "log.backup.spAbgelegt": "Startup programs: {0} from an imported backup not put in place, only stored in {1}. Check them first, then copy them to their place by hand.",
   "log.backup.zurueckgespielt": "Backup {0} restored in {1} ({2} files, {3} removed)",
   "log.backup.restoreFehler": "Restore {0} failed: {1}",
   "log.backup.autoFehler": "Automatic backup failed: {0}",
@@ -201,6 +202,7 @@
   "log.mig.news": "Migration: leftovers of the news panel removed",
   "log.mig.hellTheme": "Migration: light theme removed, back to uee-dark",
   "log.mig.gruppen": "Migration: group preselection taken over by modules",
+  "log.mig.standortKachel": "Migration: dashboard tile \"Location\" added",
   "log.mig.kopfzeile": "Migration: translations with their own header line are reloaded on the next update",
   "log.bp.scanLiveUnbekannt": "Log scan (live) failed: unknown error"
 }

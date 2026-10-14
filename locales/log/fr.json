@@ -160,6 +160,7 @@
   "log.backup.restoreAbbruch": "Restauration {0} annulée : aucune sauvegarde de sécurité ({1})",
   "log.backup.entfernenFehler": "Impossible de supprimer {0} : {1}",
   "log.backup.spUebersprungen": "Programmes au démarrage : {0} ignoré – aucune entrée avec ce nom de fichier dans la liste. Restaurez d’abord la liste, puis les scripts.",
+  "log.backup.spAbgelegt": "Programmes au démarrage : {0} d’une sauvegarde importée non mis en place, seulement déposé dans {1}. Vérifiez d’abord, puis copiez à la main à sa place.",
   "log.backup.zurueckgespielt": "Sauvegarde {0} restaurée dans {1} ({2} fichiers, {3} supprimés)",
   "log.backup.restoreFehler": "Échec de la restauration {0} : {1}",
   "log.backup.autoFehler": "Échec de la sauvegarde automatique : {0}",
@@ -201,6 +202,7 @@
   "log.mig.news": "Migration : restes du panneau d’actualités supprimés",
   "log.mig.hellTheme": "Migration : thème clair supprimé, retour à uee-dark",
   "log.mig.gruppen": "Migration : présélection des groupes reprise par les modules",
+  "log.mig.standortKachel": "Migration : tuile « Position » ajoutée au tableau de bord",
   "log.mig.kopfzeile": "Migration : les traductions avec leur propre ligne d’en-tête seront rechargées à la prochaine mise à jour",
   "log.bp.scanLiveUnbekannt": "Échec de l’analyse du journal (en direct) : erreur inconnue"
 }

@@ -160,6 +160,7 @@
   "log.backup.restoreAbbruch": "Restauración {0} cancelada: sin copia de seguridad previa ({1})",
   "log.backup.entfernenFehler": "No se pudo eliminar {0}: {1}",
   "log.backup.spUebersprungen": "Programas de inicio: {0} omitido; no hay ninguna entrada con este nombre de archivo en la lista. Restaura primero la lista y después los scripts.",
+  "log.backup.spAbgelegt": "Programas de inicio: {0} de una copia importada no se ha colocado, solo se ha guardado en {1}. Revísalo primero y después cópialo a mano a su sitio.",
   "log.backup.zurueckgespielt": "Copia de seguridad {0} restaurada en {1} ({2} archivos, {3} eliminados)",
   "log.backup.restoreFehler": "Fallo de la restauración {0}: {1}",
   "log.backup.autoFehler": "Fallo de la copia de seguridad automática: {0}",
@@ -201,6 +202,7 @@
   "log.mig.news": "Migración: restos del panel de noticias eliminados",
   "log.mig.hellTheme": "Migración: tema claro eliminado, vuelta a uee-dark",
   "log.mig.gruppen": "Migración: preselección de grupos adoptada por los módulos",
+  "log.mig.standortKachel": "Migración: se añadió el mosaico «Ubicación» al panel",
   "log.mig.kopfzeile": "Migración: las traducciones con línea de cabecera propia se recargan en la próxima actualización",
   "log.bp.scanLiveUnbekannt": "Fallo del análisis del registro (en vivo): error desconocido"
 }
