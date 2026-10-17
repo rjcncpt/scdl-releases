@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Item-Werte Vorschau</title>
+<style>
+:root{
+  --bg:#12151b; --panel:#1a1f28; --panel2:#222834; --line:#2f3745; --text:#e6e9ef; --dim:#8b95a7;
+  --accent:#4f8ef7; --ok:#78c324;
+  --tip-bg:#0b1118; --tip-line:#2b4a63; --tip-k:#7aa6c4; --tip-v:#e8f1f8; --tip-new:#5ed0ff; --tip-flavor:#b9c4cf;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:0 16px 24px}
+h1{font-size:19px;margin:18px 0 2px}
+.sub{color:var(--dim);font-size:13px;margin:0 0 14px}
+code{background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:12.5px}
+
+/* Entwurf-Wahl */
+.designs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.designs button{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 6px;font:inherit;font-size:13px;line-height:1.25;min-height:54px}
+.designs button b{display:block;font-size:15px}
+.designs button[aria-pressed=true]{border-color:var(--accent);background:#1b2a44}
+.designnote{color:var(--dim);font-size:13px;margin:6px 0 14px;min-height:38px}
+
+/* Einstellungs-Mock (wie im Launcher) */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.card h2{font-size:15px;margin:0 0 6px}
+.card p{margin:0 0 10px;color:var(--dim);font-size:13px}
+.lh{font-size:11px;letter-spacing:.08em;color:var(--dim);margin:12px 0 4px;display:flex;justify-content:space-between}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}
+.row .t{font-weight:600;font-size:14px}
+.row .d{color:var(--dim);font-size:12.5px}
+.sw{position:relative;flex:none;width:46px;height:28px}
+.sw input{position:absolute;inset:0;opacity:0;margin:0;width:100%;height:100%}
+.sw i{position:absolute;inset:0;background:#39414f;border-radius:14px;transition:.15s}
+.sw i::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.15s}
+.sw input:checked+i{background:var(--ok)}
+.sw input:checked+i::after{transform:translateX(18px)}
+
+/* ---------- Vorschau-Baustein ---------- */
+.pv{background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+.pv-head{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--panel2);border-bottom:1px solid var(--line);user-select:none;-webkit-user-select:none}
+.pv-title{font-size:13px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grip{width:22px;height:14px;background:radial-gradient(circle,var(--dim) 1.4px,transparent 1.6px) 0 0/7px 7px;opacity:.8;flex:none;display:none}
+.ib{background:transparent;border:1px solid var(--line);color:var(--text);border-radius:8px;min-width:36px;height:34px;font:inherit;font-size:13px;padding:0 8px}
+.ib[aria-pressed=true]{background:#1b2a44;border-color:var(--accent)}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:8px 10px 0}
+.chips button{background:var(--bg);color:var(--dim);border:1px solid var(--line);border-radius:9px;padding:7px 2px;font:inherit;font-size:12.5px;min-height:44px;line-height:1.2}
+.chips button small{display:block;font-size:10.5px;opacity:.8}
+.chips button[aria-selected=true]{color:var(--text);border-color:var(--tip-new);background:#0f2230}
+.pv-opts{display:flex;gap:6px;padding:8px 10px;flex-wrap:wrap}
+.pv-body{padding:0 10px 10px;overflow:auto;min-height:0;-webkit-overflow-scrolling:touch}
+.pv.min .chips,.pv.min .pv-opts,.pv.min .pv-body{display:none}
+
+/* Tooltip im Spiel-Look */
+.tip{background:var(--tip-bg);border:1px solid var(--tip-line);border-left:3px solid var(--tip-new);padding:10px 12px 12px;font:13.5px/1.4 "Rajdhani","Segoe UI",Roboto,sans-serif;color:var(--tip-v);letter-spacing:.01em}
+.tip .nm{font-size:16px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--tip-line)}
+.ln{white-space:pre-wrap;overflow-wrap:anywhere;min-height:1.4em}
+.ln .k{color:var(--tip-k)}
+.ln.neu{color:var(--tip-new)}
+.ln.neu .k{color:var(--tip-new);opacity:.75}
+.ln.fl{color:var(--tip-flavor)}
+.ln.gap{height:1.4em}
+.raw{font:12px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:#c9d3df}
+.raw b{color:#ffb454;font-weight:600}
+.legend{color:var(--dim);font-size:11.5px;margin-top:8px}
+.legend i{display:inline-block;width:9px;height:9px;background:var(--tip-new);border-radius:2px;margin-right:5px}
+
+/* Entwurf 1: fest eingebettet */
+.pv.d1{position:static}
+.pv.d1 .pv-body{max-height:none}
+
+/* Entwurf 2: schwebend, verschiebbar */
+.pv.float{position:fixed;z-index:50;width:min(360px,calc(100vw - 16px));max-height:min(72vh,560px);box-shadow:0 14px 40px rgba(0,0,0,.6);border-color:#3a4a63}
+.pv.float .grip{display:block}
+.pv.float .pv-head{cursor:grab;touch-action:none}
+.pv.float.drag .pv-head{cursor:grabbing}
+
+/* Entwurf 3: unten fest angedockt */
+.pv.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;border-radius:14px 14px 0 0;max-height:58vh;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -10px 30px rgba(0,0,0,.5)}
+.pv.dock.top{bottom:auto;top:0;border-radius:0 0 14px 14px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.pv .only-float,.pv .only-dock{display:none}
+.pv.float.free .only-float,.pv.dock .only-dock{display:inline-block}
+.slot{margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<h1>Item-Werte: Vorschau</h1>
+<p class="sub">Beispielwerte, Aufbau und Texte aus der <code>global.ini</code>. Tippe auf einen Entwurf, dann auf einen Gegenstand in der Vorschau.</p>
+
+<div class="designs" role="group" aria-label="Entwurf">
+  <button data-d="1" aria-pressed="true"><b>1</b>Fest<br>eingebettet</button>
+  <button data-d="2" aria-pressed="false"><b>2</b>Schwebend<br>verschiebbar</button>
+  <button data-d="3" aria-pressed="false"><b>3</b>Angedockt<br>+ lösbar</button>
+</div>
+<div class="designnote" id="note"></div>
+
+<div class="card">
+  <h2>Item-Werte in den Item-Beschreibungen</h2>
+  <p>Schreibt alle bekannten Werte eines Items in seine Beschreibung in der <code>global.ini</code> und ersetzt damit die kurze Angabe von CIG.</p>
+  <div class="lh"><span>WELCHE WERTE ÜBERNEHMEN</span><span id="cnt">3/3 aktiv</span></div>
+  <label class="row"><span><span class="t">Infos zur Herstellung</span><br><span class="d">Dauer und Materialliste am Ende</span></span><span class="sw"><input type="checkbox" id="oCraft" checked><i></i></span></label>
+  <label class="row"><span><span class="t">Beschreibungstext</span><br><span class="d">CIG-Werbetext unter den Werten</span></span><span class="sw"><input type="checkbox" id="oFlavor" checked><i></i></span></label>
+  <label class="row"><span><span class="t">Leerzeile zwischen Abschnitten</span><br><span class="d">Leere Zeile (<code>\n\n</code>) trennt Gruppen</span></span><span class="sw"><input type="checkbox" id="oGap" checked><i></i></span></label>
+</div>
+
+<div class="slot" id="slot1"></div>
+
+<script>
+/* ---------- Daten: Aufbau wie in der global.ini ---------- */
+const ITEMS = [
+  { chip:'Kühler', sub:'S1', name:'IcePlunge',
+    head:['Hersteller: ACOM','Typ (En): Cooler','Typ (De): Kühler'],
+    meta:['Größe: S1','Klasse: Competition (Wettkampf)','Gütegrad: C'],
+    stats:['Kühlleistung: 46','IR-Signatur: 7850','EM-Signatur: 1200','Gewicht: 180 kg','Integrität: 2400'],
+    flavor:'Wenn du dein Schiff bis ans Limit treibst in der Hektik der letzten Runde, wirst du froh sein, ACOMs IcePlunge zu haben, um die Dinge kühl zu halten.',
+    craft:['Herstellbar in: 16 Min','Iron 0,64 (Rahmen)','Copper 0,30 (Leitungen)'] },
+  { chip:'Waffe', sub:'S1', name:'CF-117 Bulldog Repeater',
+    head:['Hersteller: Klaus & Werner','Typ (En): Laser Repeater','Typ (De): Laser-Repetierer'],
+    meta:['Größe: S1'],
+    stats:['Schussrate: 450 U/min','Laserleistung: 12,5 DPS','Reichweite: 1800 m','Projektilgeschwindigkeit: 1600 m/s','Max. Wärme: 3,2 /s','Gewicht: 45 kg'],
+    flavor:'Mit einem Design für sequenzielles Dreifachfeuer ist der Klaus & Werner CF-117 Bulldog Laser-Repetierer in der Lage, energiegeladene Geschosse mit hoher Geschwindigkeit abzufeuern und dabei die Wärmeffizienz aufrechtzuerhalten. Das macht ihn zu einem Favoriten unter neuen Piloten, die ihr erstes Schiff ausstatten.',
+    craft:null },
+  { chip:'Helm', sub:'Rüstung', name:'Advocacy Interceptor Helmet',
+    head:['Typ (En): Racing Helmet','Typ (De): Rennhelm'],
+    meta:[],
+    stats:['Schadensreduktion: 5%','Temperatureignung: -31 / 61 °C','Strahlungsschutz: 26000 REM','Strahlungsabbaurate: 145,8 REM/s','Gewicht: 1,2 kg'],
+    flavor:'Das einzigartige, offene Design des Advocacy Interceptor-Helms macht ihn zu einer leichten und befreienden Option für den Einsatz in der Atmosphäre. Das Visier unterstützt AR-Fadenkreuze.',
+    craft:['Herstellbar in: 9 Min','Aluminum 0,40 (Schale)'] },
+  { chip:'Quantum', sub:'S2', name:'SparkFire',
+    head:['Hersteller: Ace Astrogation','Typ (En): Quantum Drive','Typ (De): Quantenantrieb'],
+    meta:['Größe: S2','Gütegrad: C','Klasse: Competition (Wettkampf)'],
+    stats:['Quantum-Geschwindigkeit: 201 Mm/s','Quantum-Verbrauch: 0,32 / Gm','Aufladezeit: 4,2 s','Abkühlzeit: 8,0 s','IR-Signatur: 6100','Gewicht: 210 kg'],
+    flavor:'Der SparkFire-Quantenantrieb von Ace Astrogation bietet fein abgestimmte Leistung zu einem vernünftigen Preis.',
+    craft:null }
+];
+
+const st = { d:1, i:0, craft:true, flavor:true, gap:true, raw:false, min:false, dockTop:false, floating:false };
+const $ = s => document.querySelector(s);
+
+/* Zeilenmodell: {t:'orig'|'neu'|'fl'|'gap', s} */
+function build(it){
+  const blocks = [];
+  if (it.head.length) blocks.push(it.head.map(s=>({t:'orig',s})));
+  if (it.meta.length) blocks.push(it.meta.map(s=>({t:'orig',s})));
+  blocks.push(it.stats.map(s=>({t:'neu',s})));
+  if (st.flavor) blocks.push([{t:'fl',s:it.flavor}]);
+  if (st.craft && it.craft) blocks.push(it.craft.map(s=>({t:'neu',s})));
+  const out = [];
+  blocks.forEach((b,n)=>{ if(n && st.gap) out.push({t:'gap',s:''}); out.push(...b); });
+  return out;
+}
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function lineHTML(l){
+  if (l.t==='gap') return '<div class="ln gap"></div>';
+  const m = l.t!=='fl' && /^([^:]{1,40}): (.*)$/.exec(l.s);
+  const inner = m ? '<span class="k">'+esc(m[1])+':</span> '+esc(m[2]) : esc(l.s);
+  return '<div class="ln '+l.t+'">'+inner+'</div>';
+}
+function rawHTML(lines){
+  const parts=[]; lines.forEach(l=>{ parts.push(l.t==='gap' ? '' : esc(l.s)); });
+  return parts.join('<b>\\n</b>\n').replace(/<b>\\n<\/b>\n(?=<b>)/g,'<b>\\n</b>\n');
+}
+
+/* ---------- Vorschau-Baustein (ein DOM-Knoten, wird umgehängt) ---------- */
+const pv = document.createElement('div');
+pv.className = 'pv';
+pv.innerHTML = `
+  <div class="pv-head" id="pvHead">
+    <span class="grip" aria-hidden="true"></span>
+    <span class="pv-title">Vorschau · global.ini</span>
+    <button class="ib only-dock" id="bTop" title="Oben/Unten">⇅</button>
+    <button class="ib only-dock" id="bFree" title="Lösen und verschieben">Lösen</button>
+    <button class="ib only-float" id="bDock" title="Wieder andocken">Andocken</button>
+    <button class="ib" id="bRaw" aria-pressed="false" title="Rohtext mit \\n">\\n</button>
+    <button class="ib" id="bMin" title="Ein-/Ausklappen">–</button>
+  </div>
+  <div class="chips" id="chips" role="tablist"></div>
+  <div class="pv-body"><div class="tip" id="tip"></div><div class="legend"><i></i>vom SCDL ergänzte Werte · Leerzeile = leere Zeile zwischen Gruppen</div></div>`;
+
+const chips = pv.querySelector('#chips');
+ITEMS.forEach((it,n)=>{
+  const b=document.createElement('button');
+  b.setAttribute('role','tab'); b.innerHTML = it.chip+'<small>'+it.sub+'</small>';
+  b.onclick=()=>{st.i=n;render()};
+  chips.appendChild(b);
+});
+
+function render(){
+  const it = ITEMS[st.i], lines = build(it);
+  [...chips.children].forEach((b,n)=>b.setAttribute('aria-selected', n===st.i));
+  const tip = pv.querySelector('#tip');
+  tip.innerHTML = '<div class="nm">'+esc(it.name)+'</div>' +
+    (st.raw ? '<div class="raw">'+rawHTML(lines)+'</div>' : lines.map(lineHTML).join(''));
+  pv.querySelector('#bRaw').setAttribute('aria-pressed', st.raw);
+  pv.classList.toggle('min', st.min);
+  pv.querySelector('#bMin').textContent = st.min ? '+' : '–';
+  $('#cnt').textContent = (1+ +st.craft+ +st.flavor)+'/3 aktiv';
+  if (st.d===3) padBody();
+}
+$('#oCraft').onchange=e=>{st.craft=e.target.checked;render()};
+$('#oFlavor').onchange=e=>{st.flavor=e.target.checked;render()};
+$('#oGap').onchange=e=>{st.gap=e.target.checked;render()};
+pv.querySelector('#bRaw').onclick=()=>{st.raw=!st.raw;render()};
+pv.querySelector('#bMin').onclick=()=>{st.min=!st.min;render()};
+
+/* ---------- Verschieben (Maus + Touch) ---------- */
+const head = pv.querySelector('#pvHead');
+let drag=null;
+head.addEventListener('pointerdown',e=>{
+  if (!pv.classList.contains('float') || e.target.closest('button')) return;
+  const r = pv.getBoundingClientRect();
+  drag = {dx:e.clientX-r.left, dy:e.clientY-r.top};
+  pv.classList.add('drag'); head.setPointerCapture(e.pointerId);
+});
+head.addEventListener('pointermove',e=>{
+  if(!drag) return;
+  place(e.clientX-drag.dx, e.clientY-drag.dy);
+});
+['pointerup','pointercancel'].forEach(ev=>head.addEventListener(ev,()=>{drag=null;pv.classList.remove('drag')}));
+function place(x,y){
+  const w=pv.offsetWidth, h=pv.offsetHeight;
+  x=Math.max(0,Math.min(window.innerWidth-w,x));
+  y=Math.max(0,Math.min(window.innerHeight-Math.min(h,60),y));
+  pv.style.left=x+'px'; pv.style.top=y+'px'; pv.style.right='auto'; pv.style.bottom='auto';
+}
+addEventListener('resize',()=>{ if(pv.classList.contains('float')) place(pv.offsetLeft,pv.offsetTop); if(st.d===3) padBody(); });
+
+/* ---------- Entwurf umschalten ---------- */
+const NOTES = {
+  1:'Fest im Einstellungsbereich, scrollt mit. Einfach, nichts verdeckt, aber beim Umschalten der Werte muss man nach unten schauen.',
+  2:'Schwebendes Fenster: am Kopf anfassen und verschieben, mit – einklappen. Bleibt beim Scrollen sichtbar, kann aber Inhalt verdecken.',
+  3:'Fest unten angedockt (⇅ = oben/unten), Inhalt rutscht nach. „Lösen“ macht daraus ein verschiebbares Fenster, „Andocken“ zurück.'
+};
+function reset(){ pv.removeAttribute('style'); document.body.style.paddingBottom=''; document.body.style.paddingTop=''; pv.className='pv'; }
+function setDesign(d){
+  st.d=d; reset(); st.floating=false;
+  document.querySelectorAll('.designs button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.d==d));
+  $('#note').textContent=NOTES[d];
+  if(d===1){ pv.classList.add('d1'); $('#slot1').appendChild(pv); }
+  if(d===2){ document.body.appendChild(pv); pv.classList.add('float'); pv.style.left=Math.max(8,innerWidth-pv.offsetWidth-8)+'px'; pv.style.top='auto'; pv.style.bottom='8px';
+             requestAnimationFrame(()=>place(pv.offsetLeft,pv.offsetTop)); }
+  if(d===3){ document.body.appendChild(pv); applyDock(); }
+  render();
+}
+function applyDock(){ reset(); pv.classList.add('dock'); pv.classList.toggle('top', st.dockTop); st.floating=false; padBody(); }
+function padBody(){
+  if(!pv.classList.contains('dock')) return;
+  const h = pv.offsetHeight+12;
+  document.body.style.paddingBottom = st.dockTop ? '' : h+'px';
+  document.body.style.paddingTop = st.dockTop ? h+'px' : '';
+}
+pv.querySelector('#bTop').onclick=()=>{st.dockTop=!st.dockTop;applyDock()};
+pv.querySelector('#bFree').onclick=()=>{
+  const r=pv.getBoundingClientRect(); reset(); pv.classList.add('float');
+  pv.classList.add('free'); st.floating=true; const w=Math.min(360,innerWidth-16); pv.style.width=w+'px';
+  place(Math.max(8,(innerWidth-w)/2), Math.max(8,r.top-40));
+};
+pv.querySelector('#bDock').onclick=applyDock;
+document.querySelectorAll('.designs button').forEach(b=>b.onclick=()=>setDesign(+b.dataset.d));
+
+setDesign(1);
+</script>
+</body>
+</html>
