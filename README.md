@@ -91,12 +91,15 @@ Der SCDL selbst übersetzt nichts. Er lädt und installiert nur, was diese Proje
 
 | Ressource | Anbieter |
 |---|---|
-| Icons | [Lucide](https://lucide.dev) (ISC-Lizenz) |
-| Deutsche Übersetzung, Deutsch+, Schwiizerdütsch | [StarCitizen-Deutsch-INI](https://github.com/rjcncpt/StarCitizen-Deutsch-INI), Schwiizerdütsch von **Doesewicht** |
-| Französische & italienische Übersetzung | [Dymerz/StarCitizen-Localization](https://github.com/Dymerz/StarCitizen-Localization) |
-| Portugiesische Übersetzung | [yucatan/StarCitizen-PT-BR](https://github.com/yucatan/StarCitizen-PT-BR) |
-| Japanische Übersetzung | [stdblue/StarCitizenJapaneseResources](https://github.com/stdblue/StarCitizenJapaneseResources) |
+| Deutsch hybrit | [SCDL/rjcncpt](https://github.com/rjcncpt/StarCitizen-Deutsch-INI) |
+| Deutsch+ (inkl. dt. Missionstitel) | [SCDL/rjcncpt](https://github.com/rjcncpt/StarCitizen-Deutsch-INI) |
+| Schwiizerdütsch | Doesewicht |
+| Französisch & italienisch Übersetzung | [Dymerz/StarCitizen-Localization](https://github.com/Dymerz/StarCitizen-Localization) |
+| Portugiesisch | [yucatan/StarCitizen-PT-BR](https://github.com/yucatan/StarCitizen-PT-BR) |
+| Japanisch | [stdblue/StarCitizenJapaneseResources](https://github.com/stdblue/StarCitizenJapaneseResources) |
+| Deutsch (extern) | [luftwerft.com](https://luftwerft.com/) |
 | Bauplan-Daten | [scmdb.net](https://scmdb.net/?page=fab) |
+| Icons | [Lucide](https://lucide.dev) (ISC-Lizenz) |
 
 ## Disclaimer
 
