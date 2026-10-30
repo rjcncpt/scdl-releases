@@ -1,6 +1,10 @@
 <h1 align="center">SC Desktop Launcher (SCDL)</h1>
 
 <p align="center">
+  🌐 <strong>Deutsch</strong> · <a href="README.en.md">English</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/rjcncpt/scdl-releases/releases/latest"><img src="https://img.shields.io/github/v/release/rjcncpt/scdl-releases?style=for-the-badge&label=Version&labelColor=232323&color=4f8ef7&logo=github&logoColor=white" alt="Neueste Version"></a>
   <a href="https://github.com/rjcncpt/scdl-releases/releases"><img src="https://img.shields.io/github/downloads/rjcncpt/scdl-releases/scdlauncher_setup.exe?displayAssetName=false&style=for-the-badge&label=Downloads&labelColor=232323&color=78c324&logo=download&logoColor=white" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&labelColor=232323&logo=windows&logoColor=0078D4" alt="Plattform: Windows 10 / 11">
@@ -9,8 +13,8 @@
   <a href="https://ko-fi.com/scdeutsch"><img src="https://img.shields.io/badge/Ko--fi%20unterst%C3%BCtzen-232323?style=for-the-badge&logo=kofi&logoColor=FF5E5B" alt="Auf Ko-fi unterstützen"></a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/Electron-28-47848F?style=for-the-badge&labelColor=232323&logo=electron&logoColor=47848F" alt="Electron 28">
-  <img src="https://img.shields.io/badge/Node.js-18-339933?style=for-the-badge&labelColor=232323&logo=nodedotjs&logoColor=339933" alt="Node.js 18">
+  <img src="https://img.shields.io/badge/Electron-44-47848F?style=for-the-badge&labelColor=232323&logo=electron&logoColor=47848F" alt="Electron 44">
+  <img src="https://img.shields.io/badge/Node.js-24-339933?style=for-the-badge&labelColor=232323&logo=nodedotjs&logoColor=339933" alt="Node.js 24">
   <img src="https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=for-the-badge&labelColor=232323&logo=javascript&logoColor=F7DF1E" alt="JavaScript ES2022">
 </p>
 
@@ -62,7 +66,10 @@ Reihenfolge nach dem, was man im Launcher zuerst sieht bzw. benutzt.
 | **Startprogramme** | Startet eigene Programme oder Skripte zusammen mit dem RSI Launcher oder mit Star Citizen. |
 | **Cache Cleaner** | Löscht veraltete Shader- und Grafiktreiber-Caches mit einem Klick. |
 | **Systeminfo** | Zeigt Hardware- und Grafikwerte übersichtlich an, exportierbar als Bericht. |
-| **Mehrsprachige Oberfläche** | Die Launcher-Oberfläche selbst gibt es auf Deutsch und Englisch. |
+| **Overlay (Alpha)** | Kleine Leiste über dem Spiel mit Live-Werten aus der `Game.log`: Ort, Schiff, Fortbewegung, Mission mit Anzahl aktiver Missionen, aUEC und Einnahmen, Server, Spielzeit und letzte Ereignisse. Der Scan-Modus liest Signaturen per Tastenkürzel. |
+| **Joysticks und Bindings (Alpha)** | Totzone, Empfindlichkeit und Kurven je Achse sowie Tastenbelegung per Tastendruck, direkt in der `actionmaps.xml`. |
+| **Streamer-Modus** | Verwischt persönliche Angaben wie Windows-Name, Charaktername und Standort im Launcher und im Overlay. |
+| **Mehrsprachige Oberfläche** | Die Launcher-Oberfläche selbst gibt es auf Deutsch, Englisch, Spanisch, Französisch, Italienisch und Russisch. |
 
 Die vollständige Liste mit Screenshots und Erklärung steht in **[docs/Features.md](docs/Features.md)**.
 
@@ -91,15 +98,12 @@ Der SCDL selbst übersetzt nichts. Er lädt und installiert nur, was diese Proje
 
 | Ressource | Anbieter |
 |---|---|
-| Deutsch hybrit | [SCDL/rjcncpt](https://github.com/rjcncpt/StarCitizen-Deutsch-INI) |
-| Deutsch+ (inkl. dt. Missionstitel) | [SCDL/rjcncpt](https://github.com/rjcncpt/StarCitizen-Deutsch-INI) |
-| Schwiizerdütsch | Doesewicht |
-| Französisch & italienisch Übersetzung | [Dymerz/StarCitizen-Localization](https://github.com/Dymerz/StarCitizen-Localization) |
-| Portugiesisch | [yucatan/StarCitizen-PT-BR](https://github.com/yucatan/StarCitizen-PT-BR) |
-| Japanisch | [stdblue/StarCitizenJapaneseResources](https://github.com/stdblue/StarCitizenJapaneseResources) |
-| Deutsch (extern) | [luftwerft.com](https://luftwerft.com/) |
-| Bauplan-Daten | [scmdb.net](https://scmdb.net/?page=fab) |
 | Icons | [Lucide](https://lucide.dev) (ISC-Lizenz) |
+| Deutsche Übersetzung, Deutsch+, Schwiizerdütsch | [StarCitizen-Deutsch-INI](https://github.com/rjcncpt/StarCitizen-Deutsch-INI), Schwiizerdütsch von **Doesewicht** |
+| Französische & italienische Übersetzung | [Dymerz/StarCitizen-Localization](https://github.com/Dymerz/StarCitizen-Localization) |
+| Portugiesische Übersetzung | [yucatan/StarCitizen-PT-BR](https://github.com/yucatan/StarCitizen-PT-BR) |
+| Japanische Übersetzung | [stdblue/StarCitizenJapaneseResources](https://github.com/stdblue/StarCitizenJapaneseResources) |
+| Bauplan-Daten | [scmdb.net](https://scmdb.net/?page=fab) |
 
 ## Disclaimer
 

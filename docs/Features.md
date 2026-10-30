@@ -4,6 +4,8 @@ Vollständige Übersicht aller Funktionen des SC Deutsch Launcher (SCDL), mit Er
 
 Zurück zu: [README](../README.md)
 
+🌐 **Deutsch** · [English](Features.en.md)
+
 Reihenfolge nach dem, was man im Launcher zuerst sieht bzw. benutzt, nicht nach technischer Wichtigkeit. Alle Module sind gleich gewichtet.
 
 ## Inhalt
@@ -22,6 +24,9 @@ Reihenfolge nach dem, was man im Launcher zuerst sieht bzw. benutzt, nicht nach 
 - [Startprogramme](#startprogramme)
 - [Cache Cleaner](#cache-cleaner)
 - [Systeminfo](#systeminfo)
+- [Overlay](#overlay)
+- [Joysticks und Bindings](#joysticks-und-bindings)
+- [Streamer-Modus](#streamer-modus)
 - [Was ist neu](#was-ist-neu)
 - [Oberfläche und Fenster](#oberfläche-und-fenster)
 - [Kommandozeile und Diagnose](#kommandozeile-und-diagnose)
@@ -49,6 +54,10 @@ Info-Spalte und Kacheln im Hauptfenster, das Erste, was man nach dem Start sieht
 **Wie erreichen:** Hauptfenster → Reiter „Dashboard". Welche Kacheln erscheinen und in welcher Reihenfolge, legt „Dashboard einrichten" per Drag-and-drop fest.
 
 <img width="1254" height="776" alt="image" src="https://github.com/user-attachments/assets/18a14b93-0f47-4436-8044-cc4c7e812715" />
+
+<img width="1254" height="776" alt="dashboard" src="https://github.com/user-attachments/assets/937d5245-1895-4924-9fd5-e37b0688fb21" />
+
+Weitere Kacheln: **Übersetzung** (Status je Kanal mit Ampelpunkt, Spielversion und Update-Knopf), **Standort** (letzter Ort aus der `Game.log`: Start einer Quantenroute oder geöffnetes Inventar) und **Eingabegeräte** (angeschlossene Joysticks und Gamepads, mit Modul „Bindings“ auch, ob die Joystick-Reihenfolge noch stimmt).
 
 ---
 
@@ -198,13 +207,15 @@ Spielt eine vorhandene Sicherung zurück, ohne danach dazugekommene Dateien zu v
 
 **Wie erreichen:** Reiter „Profil-Backup" → Sicherung auswählen → „Wiederherstellen".
 
+Wurde eine Sicherung importiert, legt der Launcher enthaltene Skripte nicht an ihren Platz, sondern in einen eigenen Ordner zur Prüfung. Skripte aus fremden Sicherungen könnten beliebigen Code ausführen.
+
 ---
 
 ## Spielstatistik
 
 ### Auswertung aus der Game.log
 
-Liest die Logdateien aus und zeigt Spielzeit je Sitzung, erspielte Baupläne und weitere Kennzahlen, ohne dass Star Citizen selbst dafür laufen muss.
+Liest die Logdateien aus und zeigt Spielzeit je Sitzung, erspielte Baupläne und weitere Kennzahlen, ohne dass Star Citizen selbst dafür laufen muss. Die Missionsstatistik zeigt Missionsart, Party und gescheiterte Ziele.
 
 **Wie erreichen:** Hauptfenster → Reiter „Spielzeit".
 
@@ -296,6 +307,46 @@ Zeigt relevante Systeminformationen (Hardware, Treiber, Pfade) übersichtlich an
 
 ---
 
+## Overlay
+
+### Live-Leiste über dem Spiel (Alpha)
+
+<img width="807" height="413" alt="overlay" src="https://github.com/user-attachments/assets/efb22b50-26ec-4ded-ab3e-2d2c569168c0" />
+
+Kleine Leiste, immer im Vordergrund: Ort, Schiff, Fortbewegung, Mission mit Anzahl aktiver Missionen, aUEC und Einnahmen, Server (nur bei laufendem Star Citizen), Spielzeit und die letzten Ereignisse live aus der `Game.log`. Der Scan-Modus liest die Signatur (RS-Wert) per Tastenkürzel oder Controller-Button und zeigt, was dahinter steckt, etwa Gestein samt Anzahl. Position, Deckkraft und angezeigte Werte sind einstellbar, die Reihenfolge der Elemente lässt sich per Ziehen ändern. Sichtbar nur, wenn Star Citizen im Fenster- oder randlosen Modus läuft.
+
+**Wie erreichen:** Einstellungen → Modul-Schalter „Overlay (Live-Status)" aktivieren (standardmäßig aus), danach Titelleisten-Symbol „Overlay einrichten".
+
+---
+
+## Joysticks und Bindings
+
+### Achsen, Kurven und Fehleranalyse (Alpha)
+
+<img width="1254" height="776" alt="joysticks" src="https://github.com/user-attachments/assets/34839fee-525a-431f-8c56-a2a2f27a0756" />
+
+Stellt Totzone, Empfindlichkeit und Antwortkurven von Joysticks und Gamepads ein und zeigt Modifier-Übersichten aus der `actionmaps.xml`. Vor jedem Schreiben entsteht eine Sicherung. Läuft Star Citizen, warnt der Launcher. Eine Fehleranalyse misst Rauschen, Drift und hängende Tasten und erzeugt einen anonymisierten Bericht (Kopie für Discord oder ZIP).
+
+**Wie erreichen:** Einstellungen → Modul-Schalter „Joysticks" aktivieren (standardmäßig aus).
+
+### Bindings (Alpha)
+
+<img width="1254" height="776" alt="bindings" src="https://github.com/user-attachments/assets/64e5cfe5-b3b9-4ba2-b327-043a4bc1d352" />
+
+Eigenes Fenster zum Ändern der Tastenbelegung per Tastendruck, inklusive Modifier-Kombinationen. Zeigt außerdem Eingabegeräte und die Joystick-Reihenfolge aus der `Game.log` und importiert auch CIGs Werkslayouts.
+
+**Wie erreichen:** Einstellungen → Modul-Schalter „Bindings" aktivieren (standardmäßig aus), danach Titelleisten-Symbol.
+
+---
+
+## Streamer-Modus
+
+Verwischt persönliche Angaben: Pfade mit dem Windows-Namen, Charaktername und Standort, im Launcher und im Overlay. Ein Klick auf eine verwischte Stelle deckt sie auf, bis das Fenster den Fokus verliert.
+
+**Wie erreichen:** Einstellungen → „Streamer-Modus".
+
+---
+
 ## Was ist neu
 
 ### Release-Notizen der installierten Fassung
@@ -316,7 +367,7 @@ Zeigt den Gesamtstatus aller Kanäle direkt im Tray, auch wenn das Fenster gesch
 
 ### Mehrsprachige Oberfläche
 
-Die Launcher-Oberfläche selbst (nicht die Spielübersetzung) gibt es auf Deutsch und Englisch.
+Die Launcher-Oberfläche selbst (nicht die Spielübersetzung) gibt es auf Deutsch, Englisch, Spanisch, Französisch, Italienisch und Russisch.
 
 **Wie erreichen:** Einstellungen → „Oberflächensprache".
 
