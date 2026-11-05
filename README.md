@@ -1,4 +1,4 @@
-<h1 align="center">SC Desktop Launcher (SCDL)</h1>
+<h1 align="center">Desktop Launcher für Star Citizen (SCDL)</h1>
 
 <p align="center">
   🌐 <strong>Deutsch</strong> · <a href="README.en.md">English</a>
